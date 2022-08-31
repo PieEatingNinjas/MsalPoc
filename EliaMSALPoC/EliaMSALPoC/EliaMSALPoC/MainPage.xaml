@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EliaMSALPoC.MainPage" BackgroundColor="HotPink">
+    <Grid>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <StackLayout HorizontalOptions="Fill" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Is signed in? " />
+                    <Label Text="{Binding IsSignedIn}" />
+                </StackLayout>
+                <Button Command="{Binding SignInCommand}" Text="Sign in" BackgroundColor="#ffffff" TextColor="#0178d4" HeightRequest="40" CornerRadius="20" HorizontalOptions="Fill" />
+                <Button Command="{Binding SignOutCommand}" Text="Sign out"  BackgroundColor="#ffffff" TextColor="#0178d4" HeightRequest="40" CornerRadius="20" HorizontalOptions="Fill" />
+            </StackLayout>
+        </StackLayout>
+        <IndicatorView IsEnabled="true" IsVisible="{Binding IsSigningIn}" />
+    </Grid>
+</ContentPage>
+
